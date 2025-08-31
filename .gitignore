@@ -1,0 +1,8 @@
+
+/examples/mnist_letter_recognition/data/EMNIST
+/examples/mnist_letter_recognition/data/MNIST
+/examples/synthetic_character_recognition/synthetic_dataset_test
+/examples/synthetic_character_recognition/synthetic_dataset_train
+*.pth
+/tripletlib.egg-info
+/tripletlib/__pycache__

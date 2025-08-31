@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tripletlib"
+version = "0.1.0"
+description = "A lightweight library for training and evaluating embedding models with triplet loss"
+authors = [
+    { name = "Ted Kane" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+
+dependencies = [
+    "torch",
+    "numpy",
+    "scikit-learn",
+    "scipy",
+]
+
+[project.optional-dependencies]
+examples = ["matplotlib", "pandas"]
