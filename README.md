@@ -1,4 +1,5 @@
 # TripletLib
+[![GitHub](https://img.shields.io/badge/GitHub-TripletLib-blue)](https://github.com/templateprotection/TripletLib)
 
 TripletLib is a lightweight Python library for training and evaluating embedding models using **triplet loss**. It is designed to help you build models that learn meaningful embeddings for images, time series, or any vector data, enabling tasks like verification, retrieval, or classification based on similarity.
 

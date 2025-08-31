@@ -6,3 +6,4 @@
 *.pth
 /tripletlib.egg-info
 /tripletlib/__pycache__
+/dist
