@@ -61,6 +61,7 @@ class EmbeddingModel(torch.nn.Module, ABC):
             epoch_loss_train = 0.0
             epoch_auc_train = 0.0
             epoch_eer_train = 0.0
+            self.train()
             for (anchor, positive, negative) in tqdm(dataloader_train, total=len(dataloader_train),
                                                      desc='Training Loop'):
                 anchor, positive, negative = (
@@ -92,7 +93,7 @@ class EmbeddingModel(torch.nn.Module, ABC):
             history['eers_train'].append(mean_eer_train)
             history['aucs_train'].append(mean_auc_train)
             history['losses_train'].append(mean_loss_train)
-            print(f"Epoch {epoch + 1}: Train Loss: {mean_loss_train:.4f}")
+            print(f"Epoch {epoch + 1}: Train Loss: {mean_loss_train:.4f}, EER: {mean_eer_train:.4f}, AUC: {mean_auc_train:.4f}")
 
             if dataloader_val is not None:
                 self.eval()
@@ -126,7 +127,7 @@ class EmbeddingModel(torch.nn.Module, ABC):
                 history['eers_val'].append(mean_eer_val)
                 history['aucs_val'].append(mean_auc_val)
                 history['losses_val'].append(mean_loss_val)
-                print(f"Epoch {epoch + 1}: Validation Loss: {mean_loss_val:.4f}")
+                print(f"Epoch {epoch + 1}: Validation Loss: {mean_loss_val:.4f}, EER: {mean_eer_val:.4f}, AUC: {mean_auc_val:.4f}")
 
             torch.save(self.state_dict(), model_out_path)
         return history
